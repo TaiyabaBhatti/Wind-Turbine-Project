@@ -36,17 +36,9 @@
     background-color:var(--themecolorTwo);
     height: 100%;
     position: fixed;
+    z-index: 3;
 
 }
-
-
-
-
-
-
-
-
-
 
 .flex-inline{
     display: flex;
@@ -625,9 +617,16 @@ bottom: -25px;
 
 }
 
-
-
-
+#grid i.three-bars{
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    background-color:#222c24;
+    box-shadow: 0px 0px 33px 30px #222c24;
+     display: none;
+     z-index: 4;
+     color: rgb(218, 196, 168);
+}
 
 
 
@@ -639,10 +638,16 @@ bottom: -25px;
     display: none;
     }
     #right-section{
-        margin-inline:0px;
+       margin: 0;
         padding: 10px;
         position: relative;
     }
+    #grid i.three-bars{
+       
+        display: block;
+    }
+    
+   
 }
 @media (max-width:698px) {
   

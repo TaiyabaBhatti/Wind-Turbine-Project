@@ -9,7 +9,6 @@ minute:'numeric',
 hour12:true,
 });
 dateElement.innerText=formetedDate;
-
 // oz-output value
 const production_value=document.querySelector(".oz-output");
 
@@ -98,4 +97,28 @@ hozLine.style.setProperty("--scaling-width",randIncre+"px");
 
 incrementScaling();
 
-// area chart
+// 
+const barElement=document.querySelector("#grid i.three-bars");
+let crossEnable=false;
+const sliderLeft=document.querySelector("#grid #left-section");
+
+function slidebar(){
+if(!crossEnable){
+barElement.classList.remove("fa-bar");
+barElement.classList.add("fa-xmark");
+sliderLeft.style.display="block";
+crossEnable=true;
+}
+
+else if(crossEnable){
+    barElement.classList.add("fa-bar");
+    barElement.classList.remove("fa-xmark");
+    crossEnable=false;
+    sliderLeft.style.display="none";
+    }
+    
+
+
+
+}
+barElement.addEventListener("click",slidebar);
