@@ -60,7 +60,7 @@ let hideStatus=true;
 
 // Open dashboard
 function openDashboard(){
- let pageUrl="file:///D:/WebDev-ProjectPlaybook-/WindProject/Dashboard.html";
+ let pageUrl="Dashboard.html";
  window.open(pageUrl,"_blank")
 
 
