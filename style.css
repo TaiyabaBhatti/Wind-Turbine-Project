@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#homepage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+#container {
+  position: relative;
+  width: 100%;
+  height: inherit;
+  background-image: url("./images/wallpapersden.com_wind-turbine-hd_2000x1333.jpg");
+  background-repeat: no-repeat;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+#input-2 {
+  position: relative;
+  z-index: 3;
+}
+
+/* circle */
+
+#circle {
+  position: relative;
+  height: inherit;
+ 
+}
+
+.center {
+  width: 80px;
+  height: 80px;
+  background-color: #ccc;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translate(10px, 10px);
+  box-shadow: 0 0 4px 4px rgb(167 173 173);
+  background-image: linear-gradient(to right, transparent, #ccc);
+}
+.center-back {
+  width: 74px;
+  height: 120px;
+  background-color: #dbd6d6;
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+  z-index: -1;
+  transform-origin: bottom;
+  transform: translateX(13px);
+  background-image: linear-gradient(21deg, transparent, #9b9696);
+}
+.pole {
+  position: absolute;
+  top: 50%;
+  z-index: -1;
+  width: 67px;
+  height: 50%;
+  background-color: #9b9696;
+  transform: translateX(16px);
+  background-image: linear-gradient(
+    to right,
+    rgb(167 173 173) 1%,
+    rgb(247 237 237) 51%,
+    rgb(167 173 173) 112%
+  );
+}
+
+.blade-up1 {
+  background-image: linear-gradient(to right, white, gray);
+  transform: rotate(0deg);
+}
+.blade-up2 {
+  background-image: linear-gradient(to bottom, white, gray);
+  transform: rotate(120deg);
+}
+.blade-up3 {
+  background-image: linear-gradient(to left, white, gray);
+  transform: rotate(240deg);
+}
+.blade {
+  position: absolute;
+  top: 0;
+  left: 32px;
+  z-index: -1;
+  width: 33px;
+  height: 50%;
+  background-color: white;
+  border-radius: 100%;
+  transform-origin: bottom;
+  box-shadow: 0 0 2px 2px rgb(135 143 143);
+}
+
+/* slider */
+
+#slider {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+
+  right: -60%;
+  width: 60%;
+  height: inherit;
+  animation-name: slide;
+  animation-duration: 5s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  
+}
+
+#slider #content {
+  color: #c95436;
+  font-family: "Libre Baskerville", serif;
+
+  background-color: rgb(3 5 22 / 47%); /* Black w/opacity/see-through */
+  z-index: 4;
+  padding: 20px;
+  height: inherit;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+}
+#content * {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#content p {
+  font-family: sans-serif;
+  color: wheat;
+}
+
+.btn {
+  background-color: rgb(22, 12, 3);
+  color: wheat;
+  outline: none;
+  border: none;
+  /* width: 65px; */
+  padding-inline: 15px;
+  padding-block: 10px;
+  border-radius: 10px;
+  transition: all 2s;
+}
+
+@keyframes slide {
+  0% {
+    right: -50%;
+  }
+
+  100% {
+    right: 5%;
+  }
+}
+
+.btn:active{
+    transform: scale(1.3);
+}
+
+.btn:hover{
+
+  background-color: #c96536;
+
+
+}
+
+
+
+/* popup */
+
+
+#popup {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  width: 70%;
+  height: 90vh;
+  /* background-color:#160c03a1; */
+ 
+  display: none;
+}
+
+#popup form {
+  position: absolute;
+  background-color: #d19064;
+  width: fit-content;
+  padding-block: 70px;
+  padding-inline: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#popup form * {
+  margin-bottom: 7px;
+}
+#login-heading {
+  text-align: center;
+  color: rgb(77 37 37);
+    position: relative;
+    top: -25px;
+}
+
+/* form input fields */
+#popup form input {
+  border: none;
+  outline: none;
+  padding-block: 8px;
+  padding-inline: 8px;
+  border-radius: 10px;
+  background-color: cornsilk;
+    color: brown;
+    font-weight: 800;
+}
+
+/* cross icon */
+#cross {
+  font-size: 3rem;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+}
+
+.error{
+    display: flex;
+    align-items: center;
+    margin-top: -10px;
+    color: #c90808;
+    display: none;
+}
+.invalid{
+    display: flex;
+    
+}
+
+#popup form .show-hide {
+
+position: absolute;
+right: 50px;
+    transform: translateY(50%);
+color: #9b9696;
+cursor: pointer;
+}
+
+
+
+
+
+
+/* common */
+
+button{
+    cursor: pointer;
+}
